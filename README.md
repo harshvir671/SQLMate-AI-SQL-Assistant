@@ -38,13 +38,6 @@ of their own.
 GEMINI_API_KEY = "your-key-here"
 ```
 
-**Streamlit Community Cloud:** open your app's settings → **Secrets**, and
-paste the same `GEMINI_API_KEY = "..."` line there. Never commit
-`secrets.toml` to git — add it to `.gitignore`.
-
-The app reads the key via `st.secrets.get("GEMINI_API_KEY")`. If it's not
-configured, pages 1 and the AI-explanation toggle on page 4 show a clear
-warning, while pages 2, 3, and 5 keep working with no key at all.
 
 Google periodically retires model names (e.g. the entire Gemini 1.5 line was
 shut down in 2026). The app defaults to `gemini-flash-latest`, an
@@ -55,21 +48,19 @@ override it, add an optional second secret:
 GEMINI_MODEL = "gemini-flash-latest"
 ```
 
-**Trade-off to know:** since one key powers the app for everyone, your
-Gemini free-tier quota is shared across all users of the deployed app.
 
 ## Project structure
 
 ```
 sqlmate/
-├── app.py                  # Streamlit entrypoint, 4-page sidebar nav
+├── app.py                  # Streamlit entrypoint, 4-page sidebar 
 ├── requirements.txt
 ├── modules/
 │   ├── ai_client.py         # Gemini calls for NL→SQL and AI explain
 │   ├── sql_converter.py     # SQLGlot-based MySQL ↔ Oracle conversion + caveats
-│   ├── cost_estimator.py    # Heuristic static complexity scorer (sqlparse-based)
-│   ├── complexity_estimator.py  # Big-O style structural analysis (pure Python, no AI)
-│   └── sql_explainer.py     # Rule-based SQL → English (no AI needed)
+│   ├── cost_estimator.py    # Heuristic static complexity scorer
+│   ├── complexity_estimator.py  # Big-O style structural analysis 
+│   └── sql_explainer.py     # Rule-based SQL → English 
 ```
 
 ## Notes / limitations
