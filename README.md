@@ -87,9 +87,4 @@ sqlmate/
 - No authentication, no database connection, and no data is persisted
   between sessions — this is intentionally a lightweight, stateless tool.
 
-## Resume-project pitch
 
-This project demonstrates: Python, AI API integration & prompt engineering,
-SQL parsing/transpilation (SQLGlot, sqlparse), Streamlit UI development, and
-practical problem decomposition (breaking "SQL assistant" into four discrete,
-independently testable tools).
