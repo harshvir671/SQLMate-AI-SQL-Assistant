@@ -4,6 +4,8 @@ A Streamlit app with four tools for working with SQL: natural-language-to-SQL
 generation, dialect conversion (MySQL ↔ Oracle SQL), a database-free query
 cost estimator, and SQL-to-English explanations.
 
+## Live Demo: https://sqlmate-ai-sql-assistant-bdjzsjzzng3bw6hielcw2w.streamlit.app/
+
 ## Features
 
 | Page | What it does |
